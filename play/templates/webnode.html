@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Giovann Adonis - Conwells Game Of Life</title>		
+		{# Load the tag library #}
+		{% load bootstrap5 %}
+
+		{% bootstrap_css %}
+		
+		{# Display django.contrib.messages as Bootstrap alerts #}
+		{% bootstrap_messages %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+    	var screens = {{game|safe}}
+		
+    	const timer = ms => new Promise(res => setTimeout(res, ms))
+
+    	$(document).ready(function(){
+    		
+    		// screens.forEach(async function(i){
+    		// 	i = i.replace(/(?:\r\n|\r|\n)/g, '<br>')
+    		// 	i = i.replace(/\[ \]/g, "<div class='badge text-bg-primary bg-primary ml-1' >&nbsp;</div>")
+    		// 	i = i.replace(/\[#\]/g, "<div class='badge text-bg-danger bg-danger ml-1' >&nbsp;</div>")
+    		// 	#console.log(i)
+    		// 	$("#conwell").html(i)
+    		// 	#await timer(10000);
+
+    		// })
+
+    		var start = 0, stop = screens.length;
+
+    		function anmimate() {
+
+    			start++ 
+
+    			if (start < stop){
+	    			i = screens[start].replace(/(?:\r\n|\r|\n)/g, '<br>')
+	    			i = i.replace(/\[ \]/g, "<div class='badge text-bg-secondary bg-secondary ml-1 pl-2' >&nbsp;</div>")
+	    			i = i.replace(/\[#\]/g, "<div class='badge text-bg-danger bg-danger ml-1 pl-2' >&nbsp;</div>")
+	    			
+	    			$("#conwell").html(i)
+    				setTimeout(anmimate, 500)
+    			} else {
+    				start = 0
+    				setTimeout(anmimate, 500)
+    			}
+    		}
+
+    		anmimate()
+
+    	})
+    </script>
+  </head>
+  <body>
+  		<div class="container">
+		  <div class="row">
+		    <div class="col">
+		     
+		     <h2>Conwells Game Of Life</h2>
+		     <h5 class="text-muted">By Giovann Adonis</h5>
+		    </div>
+		  </div>
+		<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" target="_new" href="https://resume.io/r/pXpCAMClx">Meet The Man (Resume)</a>
+  </li>
+
+
+  <li class="nav-item">
+    <a class="nav-link" target="_new" href="https://github.com/gminator/conwell">Read The Docs</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" target="_new" href="/api">See The API</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" target="_new" href="https://github.com/gminator/poker">Other Cool Projects</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" target="_new" href="https://www.linkedin.com/in/gasystemsengineer/">Follow Me On LinkedIn</a>
+  </li>
+</ul>
+		  <div class="row">
+		  	<div class="col-4 pt-5">
+			  	<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				  	 <h5 class="card-title">Hosted On:</h5>
+    				<h6 class="card-subtitle mb-2 text-muted">{{hostname}}</h6>
+				    <p class="card-text">
+				    	<span class="badge text-bg-success bg-success text-white">{{ip_address}}</span>
+
+					</p>
+				  </div>
+				</div>
+			</div>
+		  	<div class="col-8 pt-5" id="conwell">
+
+		  	</div>
+		  </div>
+		</div>
+  </body>
+</html>

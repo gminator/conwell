@@ -115,6 +115,10 @@ curl --location --request POST 'http://18.135.173.194/api/'
 
 There is also Django management command from which the game can be execute 
 
+``bash
+docker exec -it conwell python manage.py  play -l 20 -w 20 -c 100 -g 100
+```
+
 # Docker Installation Instruction 
 
 
@@ -122,7 +126,6 @@ The app is easily install & configured using Docker, all packages and configurat
 
 It will configure the following: 
 1. Django3 + Django Rest Framework + Python3
-2. Postgress Service 
 
 Follow the instructions below to run the service.
 

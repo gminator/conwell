@@ -64,7 +64,7 @@ The solution for both requirements are written in Python and Django and deployed
 Below are some of the design principles I've followed in the development of this solution.
 
 ### Domain Driven Design 
-This methodology tries to have the structure of the Code and Services to model the language of the Domain Experts. The function names & classes closely matches human readable language, and map to the business rules. I do this by establishing a ubiquitous language between domain experts and technical execution, I facilitate this through workshops, flow diagrams, wireframes and documentation. 
+This methodology tries to have the Code and Services model the language of the Domain Experts. The function names & classes closely matches human readable language, and map to the business rules. I do this by establishing a ubiquitous language between domain experts and technical execution, I facilitate this through workshops, flow diagrams, wireframes and documentation. 
 
 For example. 
 

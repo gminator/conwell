@@ -1,3 +1,29 @@
+
+1. [Summary](#conwells-game-of-life)  
+2. [Customer Brief](#customer-brief)  
+3. [Solution](#solution)    
+3.1 [DevOps Requirements](#devops-requirements)    
+3.2 [Conwells Game](#conwells-game)  
+4. [Solution](#solution)
+5. [Design Principles](#design-principles)   
+5.1 [Domain Driven Design](#domain-driven-design)   
+5.2 [TDD/BDD](#tddbdd)   
+5.3 [SOLID Principles](#solid-principles)   
+5.3 [DRY](#dry)   
+5.4 [REST API](#rest-api)   
+5.5 [Orchestration](#orchestration) 
+6. [Instructions](#instructions)    
+6.1 [Web Application](#web-application)    
+6.2 [REST API CURL](#rest-api-curl)    
+6.3 [ Django STDOUT](#django-stdout)    
+7. [Docker Installation Instructions](#docker-installation-instructions)    
+8. [Special Notes](#special-notes)    
+
+
+
+  
+
+
 # Conwell's Game of Life 
 The purpose of this project is to demonstrate my technical ability in development and operations. 
 
@@ -7,7 +33,7 @@ This code could have  been written in a  simple \__main\__ type manner,  but I w
 
 I thank you in advance for your consideration and hope that the results meet your acceptance criteria. 
 
-# Customer Requirements 
+# Customer Brief 
 
 This assessment  has 2 basic requirements  outlined below. 
 
@@ -19,9 +45,9 @@ The service should be deployed to a VPS in on AWS EC2, with each host being depl
 
 IAM user credential should be provided to the completed environment for assessment. 
 
-### Conwell's Game Of Life 
+### Conwell's Game
 
-Develop a simple version of Conwell's game of life. The should randomly generate live cells and the user should be able to specify the grid size and number of generations to run through. 
+Develop a simple version of Conwell's game of life. This should randomly generate live cells and the user should be able to specify the grid size and number of generations to run through. 
 
 # Solution 
 
@@ -69,7 +95,7 @@ I use a combination of data providers to map out scenarios, and the built in pyt
 
 Under normal circumstances I would have built Gherkin style user stories to define my success criteria, this is also useful for stakeholders so they can understand my intentions. Unfortunately there was not enough time in this assessment, but examples of how I go about doing this can be found here (https://github.com/gminator/poker#user-stories)
 
-### SOLID Principle
+### SOLID Principles
 
 The practice of SOLID is important to writing code that can scale complexity, Single Responsibility is the most important aspect for this test. 
 
@@ -107,7 +133,7 @@ The page will output the node rendering the content, a JavaScript example of the
 http://18.135.173.194/
 
 
-### REST API 
+### REST API CURL
 
 There is also a very simple example of a REST API that returns the node details. 
 
@@ -138,7 +164,7 @@ docker exec -it conwell python manage.py  play --help
 ```
 
 
-# Docker Installation Instruction 
+# Docker Installation Instructions 
 
 
 The app is easily install & configured using Docker, all packages and configurations will automatically be deployed. 
